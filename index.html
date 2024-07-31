@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <input type="text" class="inpvalue">
+            <button class="add"> Add</button>
+        </div>
+    </div>
+</body>
+<script>
+    let inpvalue=document.querySelector('.inpvalue')
+    let main= document.querySelector('.main')
+    let add= document.querySelector('.add')
+ 
+      
+
+ 
+
+    add.addEventListener('click',()=>{
+        let div= document.createElement('div')
+        div.classList.add('listdiv')
+        div.innerHTML=`
+     <p class='para'>${inpvalue.value} </p>
+     <button class='del'> Delete</button>
+      
+     
+
+     `
+     main.after(div)
+     div.querySelector('.del').addEventListener('click',()=>{
+        div.classList.add('delete')
+    })
+        inpvalue.value=''
+    })
+    
+
+ 
+   
+  
+
+   
+   
+</script>
+</html>
